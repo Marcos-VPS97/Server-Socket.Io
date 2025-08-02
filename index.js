@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
 
   socket.on('mensagem', (data) => {
     console.log('📩 Mensagem recebida:', data);
-    io.emit('mensagem', data); // envia para todos
+    socket.emit('mensagem', data); // envia de volta apenas para quem enviou
   });
 
   socket.on('disconnect', () => {
